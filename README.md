@@ -1,9 +1,8 @@
-WattageBar — macOS Menu Bar Adapter Wattage
+BigWatt - Big Watts in your menubar
 
 Overview
 - Shows the current AC adapter wattage (e.g., 65W) in the macOS menu bar.
-- Updates automatically on power changes via IOKit notifications, with a periodic fallback.
-- Hides the Dock icon and runs as a lightweight accessory app.
+- Updates automatically on power changes via IOKit notifications
 
 Build
 1) Ensure Xcode command line tools are available: `xcode-select -p`
