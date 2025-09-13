@@ -140,11 +140,11 @@ final class StatusController {
         update()
     }
 
-    @objc private func refreshAction() {
+    @objc private func refreshAction(_ sender: Any?) {
         update()
     }
 
-    @objc private func quitAction() {
+    @objc private func quitAction(_ sender: Any?) {
         NSApp.terminate(nil)
     }
 
@@ -242,8 +242,12 @@ final class StatusController {
             menu.addItem(displayItem)
 
             menu.addItem(NSMenuItem.separator())
-            menu.addItem(withTitle: "Refresh", action: #selector(refreshAction), keyEquivalent: "r")
-            menu.addItem(withTitle: "Quit WattageBar", action: #selector(quitAction), keyEquivalent: "q")
+            let refreshItem = NSMenuItem(title: "Refresh", action: #selector(refreshAction(_:)), keyEquivalent: "r")
+            refreshItem.target = self
+            menu.addItem(refreshItem)
+            let quitItem = NSMenuItem(title: "Quit WattageBar", action: #selector(quitAction(_:)), keyEquivalent: "q")
+            quitItem.target = self
+            menu.addItem(quitItem)
         }
     }
 
